@@ -41,7 +41,7 @@ CREATE TABLE `agri_tips` (
 --
 
 INSERT INTO `agri_tips` (`id`, `description`, `region`, `type`, `date_t`) VALUES
-(2, 'insecticide Thiamethoxam 30% SC, 21% SC, good control effect on rice planthopper Usage method 1. To control rice planthopper, 25% thiamethoxazine ', 'Harare', 'Agricultural Insecticides', '2020-01-12');
+(2, 'insecticide Thiamethoxam 30% SC, 21% SC, good control effect on rice planthopper Usage method 1. To control rice planthopper, 25% thiamethoxazine ', 'Punjab', 'Agricultural Insecticides', '2020-01-12');
 
 -- --------------------------------------------------------
 
@@ -63,8 +63,8 @@ CREATE TABLE `farmers` (
 --
 
 INSERT INTO `farmers` (`id`, `name`, `surname`, `phone`, `region`, `joined_date`) VALUES
-(3, 'tapiwa', 'mhishi', '0775011617', 'Harare', '2020-01-12'),
-(5, 'Gideon', 'Machuve', '0775509424', 'Harare', '2020-01-12');
+(3, 'Ali', 'Raza', '03449636456', 'Punjab', '2023-01-12'),
+(5, 'Umer', 'Hayat', '03443696456', 'Sindh', '2023-01-12');
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `forecasting` (
 --
 
 INSERT INTO `forecasting` (`id`, `tempa`, `region`, `daily`, `date_t`) VALUES
-(1, '24', 'Harare', 'partly Clouds', '12 Jan 2020');
+(1, '24', 'Islamabad Capital Territory', 'partly Clouds', '12 Jan 2023');
 
 -- --------------------------------------------------------
 
@@ -104,12 +104,13 @@ CREATE TABLE `users` (
 
 --
 -- Dumping data for table `users`
+-- password is 'password'
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `username`, `password`, `type`) VALUES
-(1, 'john', 'admin', 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'user'),
-(4, 'sam', 'strover', 'samstrover', '827ccb0eea8a706c4c34a16891f84e7b', 'user'),
-(5, 'chido', 'makura', '', 'd41d8cd98f00b204e9800998ecf8427e', 'user');
+(1, 'Osama', 'Tariq', 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'user'),
+(4, 'Husnain', 'Shareef', 'husnain', '5f4dcc3b5aa765d61d8327deb882cf99', 'user'),
+(5, 'Professor', 'Hussain', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'user');
 
 --
 -- Indexes for dumped tables

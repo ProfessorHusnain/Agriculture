@@ -104,21 +104,19 @@
                  <input type="text" name="phone" class="form-control" pattern="03[0-9]{9}" maxlength="11" placeholder="03371236549" required>
              </div>  
               
-                 <div class="col-md-6 form-group">
-                 <label>Region</label>
-                 <select class="form-control" name="region">
-                 <option>Bulawayo</option>
-                 <option>Harare</option>
-                 <option>Manicaland</option> 
-                 <option>Mash Central</option>
-                 <option>Mash East</option>
-                 <option>Mash West</option>
-                 <option>Masvingo</option> 
-                 <option>Mat North</option>
-                 <option>Mat South</option>
-                 <option>Midlands</option>     
-                 </select>
-             </div> 
+             <div class="col-md-6 form-group">
+  <label>Region</label>
+  <select class="form-control" name="region">
+    <option>Punjab</option>
+    <option>Sindh</option>
+    <option>Khyber Pakhtunkhwa</option>
+    <option>Balochistan</option>
+    <option>Gilgit-Baltistan</option>
+    <option>Azad Jammu and Kashmir</option>
+    <option>Islamabad Capital Territory</option>
+  </select>
+</div>
+
              
              
                  

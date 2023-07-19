@@ -1,1 +1,1 @@
-{"results":{}}
+{"coord":{"lon":73.3908,"lat":30.5508},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":39.35,"feels_like":46.1,"temp_min":39.35,"temp_max":39.35,"pressure":998,"humidity":39,"sea_level":998,"grnd_level":980},"visibility":10000,"wind":{"speed":3.84,"deg":107,"gust":3.03},"clouds":{"all":0},"dt":1689749331,"sys":{"country":"PK","sunrise":1689725762,"sunset":1689775737},"timezone":18000,"id":1332083,"name":"Bahawalnagar","cod":200}

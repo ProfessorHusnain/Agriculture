@@ -1,16 +1,39 @@
 <?php
 $cache_file = 'data.json';
+$key='ee70b55afa2aba8df28ad06ecd7afdcc';
+$cityName='Bahawalnagar';
 // if(file_exists($cache_file)){
 //   $data = json_decode(file_get_contents($cache_file));
 // }else{
-  $api_url = 'https://content.api.nytimes.com/svc/weather/v2/current-and-seven-day-forecast.json';
+
+  $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . urlencode($cityName) . '&appid=' . $key . '&units=metric';;
+  //$api_url = 'https://content.api.nytimes.com/svc/weather/v2/current-and-seven-day-forecast.json';
   $data = file_get_contents($api_url);
   file_put_contents($cache_file, $data);
   $data = json_decode($data);
+ 
 // }
-$current;
-$current = $data->results->current[0];
-$forecast = $data->results->seven_day_forecast;
+ 
+
+
+/**----------------------------------------------------------------------------------------------- */
+
+$lon = $data->coord->lon;
+$lat = $data->coord->lat;
+$mainWeather = $data->weather[0]->main;
+$description = $data->weather[0]->description;
+$icon = $data->weather[0]->icon;
+$temp = $data->main->temp;
+$feelsLike = $data->main->feels_like;
+$pressure = $data->main->pressure;
+$humidity = $data->main->humidity;
+$windSpeed = $data->wind->speed;
+$windDeg = $data->wind->deg;
+$clouds = $data->clouds->all;
+$country = $data->sys->country;
+$name = $data->name;
+
+
 
 ?>
 <style>
@@ -62,36 +85,51 @@ $forecast = $data->results->seven_day_forecast;
   <br>
   
   <div class="row">
-    <h3 class="title text-center bordered">Weather Report for <?php echo $current->city.' ('.$current->country.')';?></h3>
+    <h4 class="title text-center bordered">Weather Report for <?php echo $name .' ('.$country.')';?></h4>
     <div class="col-md-12" style="padding-left:0px;padding-right:0px;">
-      <div class="single bordered" style="padding-bottom:25px;background:url('back.jpg') no-repeat ;border-top:0px;background-size: cover;">
-        <div class="row">
-          <div class="col-sm-9" style="font-size:20px;text-align:left;padding-left:70px;">
-            <p class="aqi-value"><?php echo convert2cen($current->temp,$current->temp_unit);?> °C</p>
-            <p class="weather-icon">
-              <img style="margin-left:-10px;" src="<?php echo $current->image;?>">
-              <?php echo $current->description;?>
-            </p>
-            <div class="weather-icon">
-              <p><strong>Wind Speed : </strong><?php echo $current->windspeed;?> <?php echo $current->windspeed_unit;?></p>
-              <p><strong>Pressue : </strong><?php echo $current->pressure;?> <?php echo $current->pressure_unit;?></p>
-              <p><strong>Visibility : </strong><?php echo $current->visibility;?> <?php echo $current->visibility_unit;?></p>
-            </div>
-          </div>
-        </div>
+      <div class="single bordered" style="padding-bottom:25px;background:url('../img/back.jpg') no-repeat ;border-top:0px;background-size: cover;">
+      <div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="font-size:20px;text-align:left;padding-left:70px; ">
+      <div  >  
+      <p  style='margin:0;color:black;'>Today Temp</p>
+      <p  style='margin:0;color:black;'><?php echo $temp;?> &#8451;</p>
+    
+    </div>
+      <p class="weather-icon" style="width: 100%;">
+        <img style="margin-left:-10px;" src="../img/weahter.png">
+        <?php echo $description;?>
+      </p>
+      <div class="weather-icon" style="width: 100%;">
+        <p><strong>Wind Speed : </strong><?php echo $windSpeed;?> <?php echo 'm/s';?></p>
+        <p><strong>Wind Direction: : </strong><?php echo $windDeg;?> <?php echo 'degrees';?></p>
+        <p><strong>Pressure : </strong><?php echo $pressure;?> <?php echo 'hPa';?></p>
+     
+      </div>
+    </div>
+    <div class="col-sm-6" style="font-size:20px;text-align:left;padding-left:70px;padding-right:70px;">
+    <div >  
+      <p style='margin:0;color:black;'>Today Feels</p>
+      <p style='margin:0;color:black;'><?php echo $feelsLike;?> &#8451;</p>
+    
+    </div>
+      <p class="weather-icon" style="width: 100%;">
+        <img style="margin-left:-10px;" src="../img/weahter.png">
+        <?php echo $description;?>
+      </p>
+      <div class="weather-icon" style="width: 100%;">
+        <p><strong>Humidity : </strong><?php echo $humidity;?> <?php '%'?></p>
+        <p><strong>Pressure : </strong><?php echo $pressure;?> <?php echo 'hPa';?></p>
+        <p><strong>Cloudiness : </strong><?php echo $clouds;?> <?php echo '%';?></p>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
     </div>
   </div>
-  <br><br>
-  <div class="row">
-    <h3 class="title text-center bordered">5 Days Weather Forecast for <?php echo $current->city.' ('.$current->country.')';?></h3>
-    <?php $loop=0; foreach($forecast as $f){ $loop++;?>
-      <div class="single forecast-block bordered">
-        <h3><?php echo $f->day;?></h3>
-        <p style="font-size:1em;" class="aqi-value"><?php echo convert2cen($f->low,$f->low_unit);?> °C - <?php echo convert2cen($f->high,$f->high_unit);?> °C</p>
-        <hr style="border-bottom:1px solid #fff;">
-        <img src="<?php echo $f->image;?>">
-        <p><?php echo $f->phrase;?></p>
-      </div>
-    <?php } ?>
-  </div>
+  <br>
+ 
+    
+ 

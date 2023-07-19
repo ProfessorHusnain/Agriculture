@@ -104,21 +104,19 @@
              </div> 
         
               
-                 <div class="col-md-4 form-group">
-                 <label>Region</label>
-                 <select class="form-control" name="region">
-                 <option>Bulawayo</option>
-                 <option>Harare</option>
-                 <option>Manicaland</option> 
-                 <option>Mash Central</option>
-                 <option>Mash East</option>
-                 <option>Mash West</option>
-                 <option>Masvingo</option> 
-                 <option>Mat North</option>
-                 <option>Mat South</option>
-                 <option>Midlands</option>     
-                 </select>
-             </div> 
+             <div class="col-md-6 form-group">
+  <label>Region</label>
+  <select class="form-control" name="region">
+    <option>Punjab</option>
+    <option>Sindh</option>
+    <option>Khyber Pakhtunkhwa</option>
+    <option>Balochistan</option>
+    <option>Gilgit-Baltistan</option>
+    <option>Azad Jammu and Kashmir</option>
+    <option>Islamabad Capital Territory</option>
+  </select>
+</div>
+
              
              
                  
@@ -141,7 +139,7 @@
              <div class="line"></div>
                 <footer>
             <p class="text-center sm-sys">
-           Agriculture 2008 - <?php echo date('Y');?> &copy; All Rights Reserved &#9829; by Usama  
+           Agriculture 2008 - <?php echo date('Y');?> &copy; All Rights Reserved &#9829; by Osama  
             </p>
             </footer>
            <div class="line"></div> 
